@@ -1,3 +1,9 @@
-# groupByKey、reduceByKey、aggregateByKey、distinct原理差别
+## groupByKey、reduceByKey、aggregateByKey、distinct原理差别
 
 groupByKey()是对RDD中的所有数据做shuffle,根据不同的Key映射到不同的partition中再进行aggregate
+
+aggregateByKey()是先对每个partition中的数据根据不同的Key进行aggregate，然后将结果进行shuffle，完成各个partition之间的aggregate。因此，和groupByKey()相比，运算量小了很多
+
+reduceByKey()也是先在单台机器中计算，再将结果进行shuffle，减小运算量
+
+distinct()也是对RDD中的所有数据做shuffle进行aggregate后再去重
