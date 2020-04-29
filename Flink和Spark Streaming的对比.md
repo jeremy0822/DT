@@ -70,14 +70,16 @@ Flink与Spark Streaming几乎都能使用常见的外部存储，DB，Mango，Re
    * 支持CEP（Complex Event Processing，复合事件处理），可以找到事件之间的模式。
    * 支持启动与关闭。Flink的算子可以除了实现处理逻辑，还有如下两个接口。
    * open会在Job启动时执行，一般做些初始化的工作，或者加载热数据；close会在Job停止时，调用做些善后工作。
-      * @Override
+```
+@Override
 public void open(Configuration parameters) throws Exception {
     //Job启动时调用一次，做些初始化的工作，例如热数据加载，建立数据库连接
 }
 @Override
 public void close() throws Exception {
     //Job停止时调用一次，做些善后工作
-}
+} 
+```
 
 **Spark Streaming特有功能：**
 
