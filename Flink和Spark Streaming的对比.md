@@ -87,7 +87,7 @@ public void close() throws Exception {
 
 * **选型**
 
-从底层来看Flink是真正的面向实时的处理引擎，Spark Streaming是基于微小批次的伪实时处理引擎，在实时处理上Flink更有优势。
+Flink是真正面向实时的处理引擎，通过前面的对比，可以发现Flink无论是在延时、功能上都具有优势，吞吐也比Spark Streaming高，所以在实时处理业务上优先使用Flink
 
 * **总结**
 
